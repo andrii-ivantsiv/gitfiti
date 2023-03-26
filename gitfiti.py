@@ -305,7 +305,7 @@ def parse_contributions_calendar(contributions_calendar):
 def find_max_daily_commits(contributions_calendar):
     """finds the highest number of commits in one day"""
     daily_counts = parse_contributions_calendar(contributions_calendar)
-    return max(daily_counts)
+    return 3 if not isinstance(daily_counts, int) else max(daily_counts)
 
 
 def calculate_multiplier(max_commits):
